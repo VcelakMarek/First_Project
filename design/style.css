@@ -1,0 +1,213 @@
+:root {
+    --main-color: linear-gradient(90deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%) 100%); /* Linear Gradient */
+
+    --color1: hsl(240, 78%, 98%);   /* Very Light Grayish Blue */
+    --color2: hsl(234, 14%, 74%);   /* Light Grayish Blue */
+    --color3: hsl(233, 13%, 49%);   /* Grayish Blue */
+    --color4: hsl(232, 13%, 33%);   /* Dark Grayish Blue */
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  border: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  background-color: var(--color1);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='375' height='658'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23D0D5F6' stroke-width='2'%3E%3Cpath d='M172.71-101C70.623-79.38 17.478-39.688 13.273 18.074c-6.307 86.643 231.598 17.186 136.358 198-95.241 180.813-181.318 185.29-136.358 298C58.233 626.784 178.96 685.954 319.21 641.2c93.501-29.836 144.652-140.545 153.453-332.126'/%3E%3Cpath d='M214.7-101C134.617-82.012 92.926-47.154 89.628 3.575c-4.948 76.093 181.679 15.094 106.966 173.89C121.882 336.262 54.36 340.192 89.628 439.18c35.269 98.986 129.974 150.95 239.995 111.646C402.97 524.622 443.096 427.395 450 259.141'/%3E%3Cpath d='M250.935-103c-60.604 16.56-92.153 46.963-94.65 91.208-3.743 66.367 137.488 13.165 80.949 151.664-56.54 138.5-107.638 141.927-80.948 228.261 26.69 86.335 98.359 131.656 181.618 97.376C393.41 442.655 423.775 357.855 429 211.108'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.switchButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--color3);
+    
+}
+
+.toggle {
+    --toggle-height: 25px;
+    --toggle-width: 50px;
+
+    position: relative;
+    display: inline-block;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    border-radius: var(--toggle-height);
+    cursor: pointer;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--toggle-height);
+    background-color: #ccc;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .slider::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(var(--toggle-height) - 8px);
+    height: calc(var(--toggle-height) - 8px);
+    border-radius: calc(var(--toggle-height) / 2);
+    background-color: var(--color1);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked + .slider {
+    background: var(--main-color);
+}
+
+.toggle input:checked + .slider::before {
+    transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+}
+
+.monthly {
+    display: none;
+}
+
+h1 {
+    color: var(--color4);
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 3.2rem;
+    margin: 20px;
+    color: var(--color4);
+}
+
+h2::first-letter {
+    font-size: 1.7rem;
+    vertical-align: 25%;
+}
+
+
+h3 {
+    margin: 35px 0 0;
+}
+
+main .card{
+    margin: 30px auto 30px;
+    width: 320px;
+    background-color: white;
+    text-align: center;
+    color: var(--color3);
+    border-radius: 3%;
+    display: flex;
+    align-content: center;
+    flex-flow: column wrap;
+}
+
+main .card ul {
+    list-style-type: none;
+    padding: 0;
+    width: 85%;
+    margin-bottom: 0;
+}
+
+main .card li {
+    border-top: 1px solid var(--color2);
+    padding: 15px;
+}
+
+main .card li:last-child {
+    border-bottom:1px solid var(--color2);
+}
+
+main .card a {
+    text-decoration: none;
+    display: block;
+    color: var(--color1);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    background: var(--main-color);
+    padding: 10px;
+    border-radius: 6px;
+    margin: 30px 0; 
+}
+
+main .card a:hover {
+    background: var(--color1);
+    border: 1px solid var(--color3);
+    color: #696FDD;
+    margin: 29px 0;
+}
+
+/* blue card styles*/
+
+.blue h2{
+    color: var(--color1);
+}
+
+main .blue {
+    background: var(--main-color);
+    color: var(--color1);
+}
+main .blue a {
+    background: var(--color1);
+    color: #696FDD;
+
+}
+
+main .blue a:hover {
+    border: 1px solid var(--color1);
+    background-color: transparent;
+    color: var(--color1);
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 1000px) {
+    main {
+        display: grid;
+        grid-template-columns: auto repeat(3, fit-content(100%)) auto;
+        grid-template-rows: 20px auto 20px;
+        gap: 0;
+    }
+    main .blue {
+        padding-top: 20px;
+    }
+
+    main .card:first-child {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    main .card:nth-child(2) {
+        grid-column: 3/4;
+        grid-row: 1/4;
+    }
+    main .card:last-child {
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+}
