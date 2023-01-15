@@ -1,4 +1,4 @@
-# Pricing component with toggle solution
+# Pricing component with toggle
 
 This is my first project. 
 
