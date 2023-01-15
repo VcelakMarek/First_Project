@@ -1,6 +1,5 @@
 :root {
     --main-color: linear-gradient(90deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%) 100%); /* Linear Gradient */
-
     --color1: hsl(240, 78%, 98%);   /* Very Light Grayish Blue */
     --color2: hsl(234, 14%, 74%);   /* Light Grayish Blue */
     --color3: hsl(233, 13%, 49%);   /* Grayish Blue */
@@ -109,7 +108,7 @@ h3 {
     margin: 35px 0 0;
 }
 
-main .card{
+main .card {
     margin: 30px auto 30px;
     width: 320px;
     background-color: white;
